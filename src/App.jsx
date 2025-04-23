@@ -7,6 +7,7 @@ import SinglePlayer from './Components/SinglePlayer'
 
 function App() {
   const [allPlayers, setAllPlayers] = useState([])
+  const [singlePlayer, setSinglePlayer] = useState({})
 
   useEffect (()=> {
       const getAllPlayers = async ()=>{
@@ -30,9 +31,9 @@ function App() {
 
       <div id="mainSection">
           <Routes>
-            <Route path="/" element={<AllPlayers allPlayers={allPlayers} setAllPlayers={setAllPlayers}/>}/>
+            <Route path="/" element={<AllPlayers allPlayers={allPlayers} setAllPlayers={setAllPlayers} setSinglePlayer={setSinglePlayer}/>}/>
 
-            <Route path="/players/id" element={<SinglePlayer/>}/>
+            <Route path="/player/id" element={<SinglePlayer singlePlayer={singlePlayer} setSinglePlayer={setSinglePlayer}/>}/>
 
             <Route path="/newplayerform" element={<NewPlayerForm/>}/>
           </Routes>

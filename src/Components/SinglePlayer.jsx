@@ -1,11 +1,14 @@
 
 
+function SinglePlayer ({singlePlayer, setSinglePlayer}){
 
-function SinglePlayer (){
 
     return (
         <>
-        
+            <h1>Name: {singlePlayer.name}</h1>
+            <img src={singlePlayer.imageUrl}/>
+            <p>Breed: {singlePlayer.breed}</p>
+            <p>Status: {singlePlayer.status}</p>
         </>
     )
 }

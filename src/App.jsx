@@ -1,13 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import {Routes, Route, Link} from 'react-router-dom'
 import AllPlayers from './Components/AllPlayers'
-import NavBar from './Components/NavBar'
 import NewPlayerForm from './Components/NewPlayerForm'
 import SinglePlayer from './Components/SinglePlayer'
 
 function App() {
-  
+  const [allPlayers, setAllPlayers] = useState([])
+
+  useEffect (()=> {
+      const getAllPlayers = async ()=>{
+        const res = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2501-ftb-et-web-pt/players")
+
+        const results = await res.json();
+        setAllPlayers(results.data.players)
+        console.log(results.data.players)
+      }
+      getAllPlayers();
+  },[])
 
   return (
     <>
@@ -20,9 +30,9 @@ function App() {
 
       <div id="mainSection">
           <Routes>
-            <Route path="/" element={<AllPlayers/>}/>
+            <Route path="/" element={<AllPlayers allPlayers={allPlayers} setAllPlayers={setAllPlayers}/>}/>
 
-            <Route path="/players/id" element={<SinglePlayer1/>}/>
+            <Route path="/players/id" element={<SinglePlayer/>}/>
 
             <Route path="/newplayerform" element={<NewPlayerForm/>}/>
           </Routes>

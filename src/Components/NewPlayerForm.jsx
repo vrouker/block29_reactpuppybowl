@@ -6,11 +6,37 @@ function NewPlayerForm() {
     const [breed, setBreed] = useState("")
     const [imageUrl, setImage] = useState("")
     const [status, setStatus] = useState("")
+    const [teamId, setTeamId] = useState(0)
+
+    async function handleSubmit (event, playerObj){
+        event.preventDefault();
+        try{
+
+            console.log(name)
+                const response = await fetch ("https://fsa-puppy-bowl.herokuapp.com/api/2501-FTB-ET-WEB-PT/players", {
+                    method:"POST",
+                    headers: 
+                        {'Content-type':'application/json'},
+                    body: JSON.stringify({
+                        name: name,
+                        breed: breed,
+                        imageUrl: imageUrl,
+                        status: status,
+                        teamId: teamId,
+                    })
+                })
+                const result = await response.json();
+                console.log(result)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
         <h2>Add A New Puppy!</h2>
         {
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Puppy Name:
                     <input
@@ -37,8 +63,8 @@ function NewPlayerForm() {
                     Puppy Image:
                     <input
                         className="inputBox"
-                        name="image"
-                        oncChange={(e)=>setImage(e.target.value)}
+                        name="imageUrl"
+                        onChange={(e)=>setImage(e.target.value)}
                         value = {imageUrl}
                     />
                 </label>
@@ -55,7 +81,12 @@ function NewPlayerForm() {
                 <br/>
                 <label>
                     Team:
-                    <input/>
+                    <input 
+                        className="inputBox"
+                        name="teamId"
+                        onChange = {(e)=>setTeamId(e.target.value)}
+                        value = {teamId}
+                    />
                 </label>
                 <br/>
                 <button>Sumbit!</button>

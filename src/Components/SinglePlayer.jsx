@@ -1,6 +1,15 @@
 
 
+
 function SinglePlayer ({singlePlayer, setSinglePlayer}){
+    async function handleDelete (id){
+        try{
+            const response = await fetch (`https://fsa-puppy-bowl.herokuapp.com/api/2501-ftb-web-et-pt/players/${id}`,{ method: "DELETE"});
+        } catch (error){
+            console.log(error)
+        }
+
+    }
 
 
     return (
@@ -9,6 +18,7 @@ function SinglePlayer ({singlePlayer, setSinglePlayer}){
             <img src={singlePlayer.imageUrl}/>
             <p>Breed: {singlePlayer.breed}</p>
             <p>Status: {singlePlayer.status}</p>
+            <button onClick={()=>handleDelete(singlePlayer.id)}>Delete this puppy</button>
         </>
     )
 }

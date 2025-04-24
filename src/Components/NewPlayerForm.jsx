@@ -89,7 +89,7 @@ function NewPlayerForm() {
                     />
                 </label>
                 <br/>
-                <button>Sumbit!</button>
+                <button>Submit!</button>
             </form>
 
         }

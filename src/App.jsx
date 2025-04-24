@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route, Link, useNavigate} from 'react-router-dom'
 import AllPlayers from './Components/AllPlayers'
 import NewPlayerForm from './Components/NewPlayerForm'
 import SinglePlayer from './Components/SinglePlayer'

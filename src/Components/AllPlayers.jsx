@@ -15,7 +15,7 @@ function AllPlayers ({allPlayers, setAllPlayers, setSinglePlayer}){
     <>
         {
             allPlayers.map((player)=>
-                <div key={player.id}>
+                <div key={player.id} className="playerCard">
                     <img src={player.imageUrl} className="homeImage"/>
                     <h2>{player.name}</h2>
                     <p>{player.status}</p>

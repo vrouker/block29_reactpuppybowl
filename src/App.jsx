@@ -22,10 +22,10 @@ function App() {
 
   return (
     <>
-      <div id="navBar">
-        <Link to="./">Home</Link>
+      <div id="navBar" className="navBar">
+        <Link to="./" className="homeLink">Home</Link>
 
-        <Link to="./newplayerform">Add a Puppy!</Link>
+        <Link to="./newplayerform" className="newPlayerLink">Add a Puppy!</Link>
       </div>
 
 

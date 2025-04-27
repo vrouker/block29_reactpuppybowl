@@ -40,3 +40,65 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.homeImage{
+  width:45%;
+  height: auto;
+}
+
+.playerCard{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:black;
+  width: auto;
+  height:auto;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr, );
+  justify-items: center;
+  background-color:burlywood;
+  padding:5%;
+  border-style:solid;
+  border-width: 5px;
+}
+
+
+
+.homeLink, .newPlayerLink{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:darkgoldenrod;
+  font-size: 125%;
+  padding:5%;
+}
+
+.singlePlayerCard{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:bisque;
+}
+
+.pSingle{
+  font-size:125%;
+}
+
+.singleCardImage{
+  width:75%;
+  height: auto;
+}
+
+.newPlayerForm{
+  padding:auto;
+  width:125%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display:inline-block;
+  justify-content: center;
+  color:bisque;
+}
+.formLabel{
+  color:bisque;
+  padding:auto;
+  width:150%;
+}
+
+.formTitle{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:bisque
+}

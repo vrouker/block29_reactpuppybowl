@@ -16,11 +16,13 @@ function SinglePlayer ({singlePlayer, setSinglePlayer}){
 
     return (
         <>
+            <div className="singlePlayerCard">
             <h1>Name: {singlePlayer.name}</h1>
-            <img src={singlePlayer.imageUrl}/>
-            <p>Breed: {singlePlayer.breed}</p>
-            <p>Status: {singlePlayer.status}</p>
+            <img src={singlePlayer.imageUrl} className="singleCardImage"/>
+            <p className="pSingle">Breed: {singlePlayer.breed}</p>
+            <p className="pSingle">Status: {singlePlayer.status}</p>
             <button onClick={()=>handleDelete(singlePlayer.id)}>Delete this puppy</button>
+            </div>
         </>
     )
 }

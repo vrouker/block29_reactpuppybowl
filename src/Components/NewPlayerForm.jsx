@@ -34,10 +34,10 @@ function NewPlayerForm() {
 
     return (
         <>
-        <h2>Add A New Puppy!</h2>
+        <h2 className="formTitle">Add A New Puppy!</h2>
         {
-            <form onSubmit={handleSubmit}>
-                <label>
+            <form onSubmit={handleSubmit} className="newPlayerForm">
+                <label className="formLabel">
                     Puppy Name:
                     <input
                         className="inputBox"
@@ -48,7 +48,7 @@ function NewPlayerForm() {
                     />
                 </label>
                 <br/>
-                <label>
+                <label className="formLabel">
                     Puppy Breed:
                     <input 
                         className="inputBox"
@@ -59,7 +59,7 @@ function NewPlayerForm() {
                     />
                 </label>
                 <br/>
-                <label>
+                <label className="formLabel">
                     Puppy Image:
                     <input
                         className="inputBox"
@@ -69,7 +69,7 @@ function NewPlayerForm() {
                     />
                 </label>
                 <br/>
-                <label>
+                <label className="formLabel">
                     Puppy Status:
                     <input 
                         className="inputBox"
@@ -79,7 +79,7 @@ function NewPlayerForm() {
                     />
                 </label>
                 <br/>
-                <label>
+                <label className="formLabel">
                     Team:
                     <input 
                         className="inputBox"
